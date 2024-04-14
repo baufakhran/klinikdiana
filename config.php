@@ -5,8 +5,8 @@ if (!version_compare(PHP_VERSION, '7.0.0', '>=')) {
 
 define('DBHOST', 'localhost');
 define('DBPORT', '3306');
-define('DBUSER', 'root');
-define('DBPASS', '');
+define('DBUSER', 'mliteuser');
+define('DBPASS', 'Local77Database!');
 define('DBNAME', 'mlite');
 
 // URL Webapps
@@ -47,6 +47,6 @@ define('BASIC_MODULES', serialize([
 ]));
 
 // Developer mode
-define('DEV_MODE', false);
+define('DEV_MODE', true);
 
 ?>

@@ -28,7 +28,11 @@ COPY ./composer.* ./
 RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction --ignore-platform-req=ext-gd
 
 # copy application files to the working directory
-COPY ./ .
+COPY . .
+
+COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+
+COPY ./admin /var/www/html/public
 
 # run composer dump-autoload --optimize
 RUN composer dump-autoload --optimize
