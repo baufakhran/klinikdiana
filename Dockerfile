@@ -32,7 +32,7 @@ RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-inte
 
 # COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
-COPY . /var/www/html/public
+# COPY . /var/www/html/public
 
 
 

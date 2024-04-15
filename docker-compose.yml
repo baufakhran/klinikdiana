@@ -7,10 +7,8 @@ services:
     ports:
             - "80:80"    
     volumes:
-        - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
-        - ./uploads:/uploads
-        - ./tmp:/tmp
-        - ./admin/tmp:/admin/tmp
+        # - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+        - .:/var/www/html/public
 
   app:
     build:
@@ -23,7 +21,11 @@ services:
             MYSQL_DATABASE: mlite
             MYSQL_USER: mliteuser
     volumes:
-      - .:/app
+      # - uploads:/var/www/html/public/uploads
+      - .:/var/www/html/public
+      # - ./uploads:/uploads
+      # - ./tmp:/tmp
+      # - ./admin/tmp:/admin/tmp
      
     ports:
       - "9000:9000"     
@@ -44,4 +46,4 @@ services:
 # php
 volumes:
     mysqldata:
-    uploads:
+#     uploads:
