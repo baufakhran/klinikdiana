@@ -1,0 +1,22 @@
+services:
+# nginx
+  web:
+    build:
+        dockerfile: ./nginx/Dockerfile
+        context: .
+    ports: 
+      - "8081:80"  
+              
+    volumes:
+        - .:/var/www/html/public
+
+  app:
+    build:
+      dockerfile: ./Dockerfile    
+      context: .  
+    volumes:
+      - .:/var/www/html/public
+     
+    ports:
+      - "9000:9000"     
+
